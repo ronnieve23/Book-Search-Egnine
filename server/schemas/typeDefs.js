@@ -5,24 +5,18 @@ type User {
   _id: ID
   username:String
   email: String
+  bookCount: Int
 }
   
-
-type Auth {
-  token: ID!
-  user: User
-}
 
 type Query {
   me:User
 }
 
 type Mutation {
-  loginUser(email: String!, password: String!): Auth
-  addUser(username: String!, email: String!, password: String!): Auth
-  
+  loginUser(email: String!, password: String!): User
+  addUser(username: String!, email: String!, password: String!): User
 }
-  
   
   
   `;
