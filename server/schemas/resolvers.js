@@ -1,7 +1,30 @@
+const {User} = require('../models');
+const {AuthenticationError} = require('apollo-server-expres');
+const { signToken } = require('../utils/auth');
+
+
+
+
+
 const resolvers = {
     Query: {
-      helloWorld: () => {
-        return 'Hello world!';
+      me: async (parent, args, context) => {
+        if (context.user){
+          const userData = await User.findOne({_id : context.user_id})
+              .select('-__v -password');
+
+              return userData;
+        }
+        throw new AuthenticationError('You must be logged in');
+      }
+    },
+
+    Mutation: {
+      addUser: async (parent, args) => {
+        const user = await User.create(args.user);
+        const token = signToken(user);
+
+        return {token, user}
       }
     }
   };
