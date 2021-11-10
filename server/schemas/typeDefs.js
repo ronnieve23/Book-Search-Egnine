@@ -7,15 +7,21 @@ type User {
   email: String
   bookCount: Int
 }
-  
+
+type Auth {
+  token: ID!
+  user: User
+}
+
 
 type Query {
-  me:User
+  me: User
+
 }
 
 type Mutation {
-  loginUser(email: String!, password: String!): User
-  addUser(username: String!, email: String!, password: String!): User
+  loginUser(email: String!, password: String!): Auth
+  addUser(username: String!, email: String!, password: String!): Auth
 }
   
   
