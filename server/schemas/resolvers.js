@@ -1,5 +1,5 @@
 const {User} = require('../models');
-const {AuthenticationError} = require('apollo-server-expres');
+const {AuthenticationError} = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
 
 
@@ -24,7 +24,7 @@ const resolvers = {
         const user = await User.create(args.user);
         const token = signToken(user);
 
-        return {token, user}
+        return {token, user};
       }
     }
   };
