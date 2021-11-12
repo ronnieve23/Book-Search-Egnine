@@ -20,9 +20,7 @@ const startServer = async () => {
     resolvers,
     context: authMiddleware, 
   });
-  await server.start();
   server.applyMiddleware({ app });
-  console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
 
   if (process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "../client/build")));
