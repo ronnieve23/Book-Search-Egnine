@@ -33,6 +33,7 @@ export const SAVE_BOOK = gql`
             savedBooks {
                 bookId
                 title
+                image
                 description
                 link
                 authors
@@ -51,6 +52,7 @@ export const REMOVE_BOOK = gql`
             savedBooks {
                 bookId
                 title
+                image
                 description
                 link
                 authors
@@ -60,4 +62,4 @@ export const REMOVE_BOOK = gql`
 `
 
 
-export default { LOGIN_USER, ADD_USER }
+export default { LOGIN_USER, ADD_USER, SAVE_BOOK, REMOVE_BOOK }
