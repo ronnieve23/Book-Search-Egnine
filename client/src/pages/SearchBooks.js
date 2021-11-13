@@ -4,7 +4,7 @@ import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'reac
 import Auth from '../utils/auth';
 import { searchGoogleBooks } from '../utils/API';
 import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
-import {useMutation} from '@apollo/client'
+import { useMutation } from '@apollo/client'
 import { SAVE_BOOK } from '../utils/mutations';
 
 const SearchBooks = () => {
@@ -70,7 +70,7 @@ const SearchBooks = () => {
 
     try {
       await saveBook({
-        variables: {input: bookToSave}
+        variables: { input: bookToSave }
       });
 
       // if book successfully saves to user's account, save book id to state
@@ -125,9 +125,9 @@ const SearchBooks = () => {
                   <p className='small'>Authors: {book.authors}</p>
                   <Card.Text>
                     {book.description}
-                    <br/>
-                    <a href={book.link} target="_blank" rel="noopener noreferrer">View This Book in Google Play Books</a>                  
-                    </Card.Text>
+                    <br />
+                    <a href={book.link} target="_blank" rel="noopener noreferrer">View This Book in Google Play Books</a>
+                  </Card.Text>
                   {Auth.loggedIn() && (
                     <Button
                       disabled={savedBookIds?.some((savedBookId) => savedBookId === book.bookId)}

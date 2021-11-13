@@ -55,8 +55,8 @@ const SavedBooks = () => {
                   <Card.Text>
                     {book.description}
                     <br />
-                    <a href={book.link} target="_blank" rel="noopener noreferrer">View This Book in Google Play Books</a>                  
-                    </Card.Text>
+                    <a href={book.link} target="_blank" rel="noopener noreferrer">View This Book in Google Play Books</a>
+                  </Card.Text>
                   <Button className='btn-block btn-danger' onClick={() => handleDeleteBook(book.bookId)}>
                     Delete this Book!
                   </Button>
