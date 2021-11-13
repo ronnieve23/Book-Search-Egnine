@@ -2,7 +2,7 @@
  ![MIT BADGE](https://img.shields.io/badge/License-MIT-blue.svg)
  
  ## Description
-This Repository contains refactired code for Rutgers Coding Bootcamp's Challenge 21 "MERN Challenge: Book Search Engine". 
+This Repository contains refactored code for Rutgers Coding Bootcamp's Challenge 21 "MERN Challenge: Book Search Engine". 
 For this this week's challenge, we were tasked to take a fully functioning Google Books API search engine built with a RESTful API, and refactor it to be a GraphQL API built with Apollo Server. 
 
 The app was built using the MERN stack, with a React front end, MongoDB database, and Node.js/Express.js server and API. It's already set up to allow users to save book searches to the back end.
